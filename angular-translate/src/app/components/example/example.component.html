@@ -1,0 +1,14 @@
+<select [(ngModel)]="optsDefault" (change)="changeLocale($event)">
+  <option *ngFor="let opt of opts" [ngValue]="opt.value">{{ opt.translate | translate }}</option>
+</select>
+<p>{{ 'lang' | translate }} -
+  <span>{{ optsDefault }}</span>
+</p>
+<p>{{ 'hello' | translate }}</p>
+<div [innerHTML]="'name' | translate:param"></div>
+
+<!-- one way -->
+<!-- {{ 'LANSTR' | translate }} -->
+
+<!-- two way -->
+<!-- <span [innerHTML]="'LAN' | translate"></span> -->
